@@ -1,0 +1,23 @@
+from modules import *
+
+riddles = [["What gets bigger, when you take from it?", "hole"], ["I travel the world, but never leave my corner, what am I?", "stamp"], ["I have holes but I can still hold water, what am I?", "sponge"]]
+
+def riddle():
+    clear("")
+    riddle = riddles[random.randint(0,2)]
+    tries = 0
+    while tries < 5:
+        answer = raw_input(riddle[0]+"\n")
+        if "help" in answer:
+            Help("Riddle of the day")
+        if answer.lower() == riddle[1].lower():
+            print("Well done! that is the right answer!")
+            raw_input("")
+            return
+        else:
+            print("Unlucky, try again!\n")
+            tries += 1
+    print("Unlucky, the answer was {}!".format(riddle[1]))
+
+    
+
