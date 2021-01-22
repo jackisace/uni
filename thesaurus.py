@@ -8,16 +8,18 @@ def thesaurus(mainHistory):
         print("=========")
         print("history: \n" + history)
         print("\nEnter your notes below, enter q on its own to quit when you are done:\n")
-        ui = raw_input("")
+        ui = input("")
         if "quit" == ui:
             return history
         if "q" == ui:
             return history
         if "h" == ui:
-            Help("Thesaurus")
+            if Help("Thesaurus") == 1:
+                return history
             continue
         if "help" == ui:
-            Help("Thesaurus")
+            if Help("Thesaurus") == 1:
+                return history
             continue
 
         ui = word(ui)

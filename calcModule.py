@@ -11,7 +11,7 @@ def calc(mainHistory):
         print("Calculator")
         print("==========")
         try:
-            ui = raw_input("\nEnter calculations (ie. 7*3)\n\n")
+            ui = input("\nEnter calculations (ie. 7*3)\n\n")
         except IndexError:
             continue
         if "quit" == ui:
@@ -19,11 +19,11 @@ def calc(mainHistory):
         if "q" == ui:
             return history
         if "h" == ui:
-            Help("Calculator")
-            continue
+            if Help("Calculator") == 1:
+                return history
         if "help" == ui:
-            Help("Calculator")
-            continue
+            if Help("Calculator") == 1:
+                return history
         if "+" in ui:
             a = float(ui.split("+")[0])
             b = float(ui.split("+")[1])

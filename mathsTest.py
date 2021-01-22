@@ -3,7 +3,6 @@ operators = ["+", "-"]
 
 def mathsTest():
     correct = 0
-    helpPrep("You are in Maths Test")
 
     for i in range(0,10):
         operator = random.randint(0,1)
@@ -22,7 +21,15 @@ def mathsTest():
         print("\nquit) to quit to main menu\n")
         valid = False
         while not valid:
-            user = raw_input("What is {}{}{}?: ".format(a,operator,b))
+            user = input("What is {}{}{}?: ".format(a,operator,b))
+            if "help" in user:
+                if Help("Maths Test") == 1:
+                    return
+            if "h" in user:
+                if Help("Maths Test") == 1:
+                    return
+            if "quit" in user:
+                return
             if "q" in user:
                 return
             try:
@@ -38,15 +45,15 @@ def mathsTest():
 
 
     if correct == 5 and correct == 6:
-        raw_input("\n\nYou got {}/10, well done!".format(correct))
+        input("\n\nYou got {}/10, well done!".format(correct))
     elif correct == 7 and correct == 8:
-        raw_input("\n\nYou got {}/10, really well done!".format(correct))
+        input("\n\nYou got {}/10, really well done!".format(correct))
     elif correct == 9:
-        raw_input("\n\nYou got {}/10, Great work!".format(correct))
+        input("\n\nYou got {}/10, Great work!".format(correct))
     elif correct == 10:
-        raw_input("\n\nYou got {}/10, Amazing!!".format(correct))
+        input("\n\nYou got {}/10, Amazing!!".format(correct))
     else:
-        raw_input("\n\nYou got {}/10 ".format(correct))
+        input("\n\nYou got {}/10 ".format(correct))
 
 
 

@@ -1,3 +1,5 @@
+from clear import *
+from main import *
 from modules import *
 
 
@@ -11,13 +13,21 @@ def Help(strIn):
     print("quit) Quit program")
     print("main) Main menu")
     print("continue) Continue with the program")
-    user = raw_input("\nEnter your selection")
+    user = input("\nEnter your selection: ")
+    if "help" in user:
+        Help(strIn)
     if "h" in user:
         Help(strIn)
+    if "quit" in user:
+        quit()
     if "q" in user:
         quit()
+    if "continue" in user:
+        return
     if "c" in user:
         return
+    if "main" in user:
+        return 1
     if "m" in user:
-        main()
+        return 1
 

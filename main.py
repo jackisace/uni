@@ -18,7 +18,7 @@ def main():
         print("6) Notes")
         print("7) Calculator")
         print("8) Maths Test")
-        ui = raw_input("\n").lower()[0]
+        ui = input("\n").lower()[0]
         if "q" in ui:
             historyFile = open("history.txt", "w")
             historyFile.write(history)

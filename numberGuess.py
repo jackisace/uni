@@ -1,14 +1,14 @@
 from modules import *
 
 def numberGuess():
-    user = input("How high do you dare to go?: ")
-    number = random.randint(0,user)
+    number = random.randint(0,100)
     guessed = False
     guesses = 0
     while not guessed:
-        user = input("Guess your number: ")
+        user = input("Guess your number between 0 and 100: ")
         if "help" in user:
-            Help("Number Guess")
+            if Help("Number Guess") == 1:
+                return 1
         guesses += 1
         if user < number:
             print("Higher")
@@ -16,7 +16,7 @@ def numberGuess():
             print("Lower")
         elif user == number:
             print("Congratulations! you got it right in {} guesses".format(guesses))
-            raw_input("")
+            input("")
             guessed = True
     return
 

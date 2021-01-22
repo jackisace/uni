@@ -8,12 +8,14 @@ def spellChecker(mainHistory):
         print("=============")
         print("history: \n" + history)
         print("\nEnter your notes below, enter q on its own to quit when you are done:\n")
-        line = raw_input("")
+        line = input("")
         if line == "help":
-            Help("Spell checker")
+            if Help("Spell checker") == 1:
+                return history
             continue
         if line == "h":
-            Help("Spell checker")
+            if Help("Spell checker") == 1:
+                return history
             continue
         if line == "quit":
             return history

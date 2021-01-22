@@ -9,11 +9,17 @@ def notes(mainHistory):
         print("=====")
         print("history: \n" + history)
         print("\nEnter your notes below, enter q on its own to quit when you are done:\n")
-        line = raw_input("")
+        line = input("")
+        if line == "q":
+            return history
+        if line == "help":
+            if Help("Notes") == 1:
+                return history
         if "quit" in line:
             return history
         if "help" in line:
-            Help("Notes")
+            if Help("Notes") == 1:
+                return history
 
         line = spell(line)
         line = word(line)

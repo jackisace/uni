@@ -4,8 +4,6 @@ from clear import *
 
 def word(line):
     library = [["building", "structure", "architecture", "home", "house", "hut"], ["animal", "beast", "creature", "pet"]]
-    if line == "q":
-        return history
 
     finder = line.split(" ")
     for item in library:
@@ -17,7 +15,7 @@ def word(line):
                 if found:
                     break
                 if libraryWord in lineWord:
-                    answer = raw_input("By {}, did you mean any of these? \n{} \ny/n: ".format(lineWord, item))
+                    answer = input("By {}, did you mean any of these? \n{} \ny/n: ".format(lineWord, item))
                     if "y" in answer:
                         library.remove(item)
                         line += " ("

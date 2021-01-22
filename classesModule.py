@@ -3,7 +3,7 @@ from modules import *
 allClasses = ["Art", "Science", "Maths", "English", "History", "Drama", "Music", "PE", "Cooking", "IT"]
 
 def classes():
-    classesFile = open("classes.txt", "rw")
+    classesFile = open("classes.txt", "r")
     currentClasses = classesFile.read().split("\n")
     classesFile.close()
     classesFile = None
@@ -16,9 +16,10 @@ def classes():
             print(eachClass)
         print("update) update your classes")
         print("quit) main menu")
-        user = raw_input("\n")[0]
+        user = input("\n")[0]
         if "h" in user:
-            Help("Classes")
+            if Help("Classes") == 1:
+                return
         if "q" in user:
             return
         if "u" in user:
@@ -31,7 +32,7 @@ def classes():
                 if i < len(currentClasses) - 1:
                     i += 1
                     print("{}) {}".format(i, eachClass))
-            userA = input("please select which one you need to update: ") - 1 
+            userA = int(input("please select which one you need to update: ")) - 1 
 
             j = 0
             clear("")
@@ -39,7 +40,7 @@ def classes():
                 if j < len(allClasses) - 1:
                     j += 1
                     print("{}) {}".format(j, eachAllclass))
-            userB = input("please select which one you need to update to: ") - 1
+            userB = int(input("please select which one you need to update to: ")) - 1
 
             currentClasses[userA] = allClasses[userB]
 

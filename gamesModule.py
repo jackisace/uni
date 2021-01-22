@@ -1,4 +1,10 @@
 from modules import *
+from clear import *
+from hangman import *
+from highLow import *
+from riddle import *
+from helpModule import *
+from numberGuess import *
 
 
 def games():
@@ -14,16 +20,21 @@ def games():
         print("4) Number guess")
         print("\nhelp) Ask at any time for help")
         print("quit) Quit program")
-        ui = raw_input("\nEnter your selection :")[0]
+        ui = input("\nEnter your selection :")[0]
         if "q" in ui:
             return
         elif "h" in ui:
-            Help("Games")
+            if Help("Games") == 1:
+                return
         elif "1" in ui:
-            hangman()
+            if hangman() == 1:
+                return
         elif "2" in ui:
-            highLow()
+            if highLow() == 1:
+                return
         elif "3" in ui:
-            riddle()
+            if riddle() == 1:
+                return
         elif "4" in ui:
-            numberGuess()
+            if numberGuess() == 1:
+                return

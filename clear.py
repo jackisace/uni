@@ -2,5 +2,5 @@
 def clear(strIn):
     if len(strIn) > 1:
         print("\n" + strIn)
-        raw_input("")
+        input("")
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")

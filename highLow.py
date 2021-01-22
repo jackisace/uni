@@ -7,13 +7,14 @@ def highLow():
         nextNumber = random.randint(0,100)
         clear("")
         print("quit) quit to main menu\n")
-        answer = raw_input("The number is {}, will the next one be higher or lower?: ".format(number))[0]
+        answer = input("The number is {}, will the next one be higher or lower?: ".format(number))
         if "q" in answer:
             return
         if "help" in answer:
-            Help("Higher or Lower")
+            if Help("Higher or Lower") == 1:
+                return 1
             continue
-        if "h" in answer:
+        elif "h" in answer:
             if number < nextNumber:
                 score += 1
                 if score == 3:
@@ -23,7 +24,7 @@ def highLow():
             else:
                 score = 0
                 print("Unlucky, keep trying!")
-        if "l" in answer:
+        elif "l" in answer:
             if number > nextNumber:
                 score += 1
                 if score == 3:
@@ -33,7 +34,7 @@ def highLow():
             else:
                 score = 0
                 print("Unlucky, keep trying!")
-        raw_input("Press Enter to continue")
+        input("Press Enter to continue")
         if score == 3:
             return
 

@@ -1,4 +1,7 @@
-from modules import *
+from spellModule import *
+from wordModule import *
+from clear import *
+from helpModule import *
 
 
 def workbook(mainHistory):
@@ -11,7 +14,7 @@ def workbook(mainHistory):
         print("Workbook")
         print("========")
         try:
-            ui = raw_input("\nEnter calculations (ie. 7*3) or just write notes :)\n\n")
+            ui = input("\nEnter calculations (ie. 7*3) or just write notes :)\n\n")
         except IndexError:
             continue
         if "quit" == ui:
@@ -19,10 +22,12 @@ def workbook(mainHistory):
         if "q" == ui:
             return history
         if "h" == ui:
-            Help("Workbook")
+            if Help("Workbook") == 1:
+                return history
             continue
         if "help" == ui:
-            Help("Workbook")
+            if Help("Workbook") == 1:
+                return history
             continue
         isCalc = True
         for char in ui:

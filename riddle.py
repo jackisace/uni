@@ -7,12 +7,15 @@ def riddle():
     riddle = riddles[random.randint(0,2)]
     tries = 0
     while tries < 5:
-        answer = raw_input(riddle[0]+"\n")
+        answer = input(riddle[0]+"\n")
+        if "quit" in answer:
+            quit()
         if "help" in answer:
-            Help("Riddle of the day")
+            if Help("Riddle of the day") == 1:
+                return 1
         if answer.lower() == riddle[1].lower():
             print("Well done! that is the right answer!")
-            raw_input("")
+            input("")
             return
         else:
             print("Unlucky, try again!\n")

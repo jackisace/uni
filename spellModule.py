@@ -19,7 +19,7 @@ def spell(line):
 
                 if accuracy > len(libraryWord)/2:
                     print("by {}, did you mean {}?".format(lineWord, libraryWord))
-                    answer = raw_input("y/n: ")
+                    answer = input("y/n: ")
                     if "y" in answer:
                         line = line.replace(lineWord, libraryWord)
 

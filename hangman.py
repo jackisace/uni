@@ -1,4 +1,5 @@
 from clear import *
+from helpModule import *
 import random
 
 def hangman():
@@ -101,7 +102,7 @@ def hangman():
         print(hanger[wrongGuesses])
         if wrongGuesses == 8:
             print("Unlucky, the word was " + word + " better luck next time!")
-            raw_input("")
+            input("")
             playing = False
             continue
         display = "Display: "
@@ -111,16 +112,17 @@ def hangman():
         print(display + hiddenStr)
         if hiddenStr in word:
             print("Congratulations, you have won! The word was {} and it took {} guesses".format(word, guesses))
-            raw_input("")
+            input("")
             playing = False
             continue
 
         valid = False
         while not valid:
             repeat = False
-            guess = raw_input("Enter letter to guess: ")
+            guess = input("Enter letter to guess: ")
             if "help" in guess:
-                Help("Hangman")
+                if Help("Hangman") == 1:
+                    return 1
             guess = guess[0]
             
             for letter in guessedLetters:
